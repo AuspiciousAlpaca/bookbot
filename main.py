@@ -1,5 +1,5 @@
 def main():
-    book_path = "books/frankenstein.txt"
+    book_path = ""
     content = get_book_text(book_path)
     word_count = get_word_count(content)
     all_characters = get_character_count(content)
@@ -27,19 +27,14 @@ def get_character_count(content):
     return characters
 
 def get_only_alphas(all_characters):
-    only_alphas = dict()
-    for key, value in all_characters.items():
-        if key.isalpha():
-            only_alphas[key] = value
+    only_alphas = {key: value for key, value in all_characters.items() if key.isalpha()}
     return only_alphas
 
 def sort_on(dict):
     return dict["count"]
 
 def dict_to_list(alphas):
-    character_list = []
-    for character, count in alphas.items():
-        character_list.append({"character": character, "count": count})
+    character_list = [{"character": character, "count": count} for character, count in alphas.items()]
     character_list.sort(key=sort_on, reverse=True)
     return character_list
 
@@ -49,7 +44,5 @@ def print_report(book_path, word_count, character_list):
     for dictionary in character_list:
         print(f"The character '{dictionary['character']}' was found {dictionary['count']} times\n")
     print("|--- End of report. Thanks for using Bookbot v0.1 ---|")
-
-
 
 main()
