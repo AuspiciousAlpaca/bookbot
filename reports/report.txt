@@ -1,4 +1,4 @@
-|--- Start of report for books/frankenstein.txt ---|
+|--- Start of report for books/frankenstein.txt created: 19/01/2025, 22:22:56 ---|
 Total word count: 77986
 The character 'e' was found 46043 times
 The character 't' was found 30365 times

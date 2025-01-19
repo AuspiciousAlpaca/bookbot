@@ -1,3 +1,6 @@
+from datetime import datetime
+
+
 def main():
     file_path = "books/frankenstein.txt"
     content = get_text(file_path)
@@ -42,7 +45,7 @@ def dict_to_list(alpha_characters):
 # formats and outputs the report as a text file
 def return_report(file_path, word_count, character_list):
     with open("reports/report.txt", "w") as f:
-                f.write(f"|--- Start of report for {file_path} ---|\n")
+                f.write(f"|--- Start of report for {file_path} created: {datetime.now().strftime("%d/%m/%Y, %H:%M:%S")} ---|\n")
                 f.write(f"Total word count: {word_count}\n")
                 for dictionary in character_list:
                     f.write(f"The character '{dictionary['character']}' was found {dictionary['count']} times\n")
